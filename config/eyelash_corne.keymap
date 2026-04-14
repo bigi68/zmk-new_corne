@@ -1,5 +1,5 @@
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25
 
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
@@ -15,9 +15,9 @@
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
-    acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <100>;       // 300
-    delay-ms = <0>;                   // 0
+    acceleration-exponent = <1>;
+    time-to-max-speed-ms = <100>;
+    delay-ms = <0>;
 };
 
 &mmv {
@@ -30,6 +30,16 @@
 
 / {
     behaviors {
+        // ---【高速Layer-tap設定】---
+        lt_fast: lt_fast {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <170>; // 長押し判定を200msから170msに高速化
+            quick-tap-ms = <150>;
+            bindings = <&mo>, <&kp>;
+        };
+
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Shift/Caps Lock Tap Dance";
@@ -48,16 +58,22 @@
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
         tap-ms = <100>;
     };
 
     combos {
         compatible = "zmk,combos";
+        timeout-ms = <50>;
 
         softoff {
             bindings = <&soft_off>;
             key-positions = <1 15 29>;
+        };
+
+        // ---【お試しコンボ：J+K同時押しでENTER】---
+        combo_enter {
+            key-positions = <19 20>; 
+            bindings = <&kp ENTER>;
         };
     };
 
@@ -67,24 +83,22 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                                   &kp UP                 &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S  &kp D     &kp F  &kp G                         &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp SPACE               &kp DOWN               &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &lt 3 SPACE                                                 &lt 3 ENTER  &mo 2  &kp RALT
-            >;
-
+&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                                     &kp UP                   &kp Y         &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&td0       &kp A  &kp S  &kp D     &kp F  &kp G                           &kp LEFT  &kp ENTER  &kp RIGHT     &kp H         &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B         &kp SPACE                   &kp DOWN                 &kp N         &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                         &kp LGUI  &mo 1  &lt_fast 3 SPACE                                                   &lt_fast 3 ENTER  &mo 2  &kp RALT
+            >; // ↑ 親指の lt 3 を lt_fast 3 に全置換しました
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5                                         &mmv MOVE_UP                   &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                   &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
-&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
-                                         &trans        &trans        &trans                                                                        &kp INS          &kp DEL          &trans
-            >;
-
+&trans  &kp N1           &kp N2          &kp N3          &kp N4          &kp N5                                          &mmv MOVE_UP                   &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp EQUAL
+&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3                    &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp SEMI
+&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans          &trans          &rgb_ug RGB_EFF  &kp C_MUTE                     &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp NUHS
+                                         &trans          &trans          &trans                                                                         &kp INS          &kp DEL          &trans
+            >; // ↑ 右端に ^ (EQUAL), れ (SEMI), : (NUHS) を追加完了！
             sensor-bindings = <&scroll_encoder>;
         };
 
@@ -92,11 +106,10 @@
             display-name = "SYMBOL";
             bindings = <
 &trans  &kp EXCL      &kp AT        &kp HASH   &kp DLLR   &kp PRCNT                            &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans  &bt BT_CLR    &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5   &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                    &trans     &trans     &kp SPACE                                             &kp RET    &trans     &trans
+&trans  &bt BT_CLR    &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
+&trans  &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5  &trans                     &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+                                    &trans     &trans     &kp SPACE                                                             &kp RET    &trans     &trans
             >;
-
             sensor-bindings = <&scroll_encoder>;
         };
 
@@ -108,7 +121,6 @@
 &trans          &sys_reset  &trans      &bootloader   &trans      &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans        &trans      &bootloader   &sys_reset   &kp SCROLLLOCK   &kp PAUSE_BREAK
                                         &trans        &trans      &trans                                                                   &trans        &trans      &trans
             >;
-
             sensor-bindings = <&scroll_encoder>;
         };
     };
