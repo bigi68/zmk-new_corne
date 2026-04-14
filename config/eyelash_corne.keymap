@@ -30,13 +30,13 @@
 
 / {
     behaviors {
-        // ---【高速Layer-tap設定】---
+        // ---【150ms & Balanced設定】---
         lt_fast: lt_fast {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <170>; // 長押し判定を200msから170msに高速化
-            quick-tap-ms = <150>;
+            flavor = "balanced";       // tap-preferredから変更！より直感的になります
+            tapping-term-ms = <150>;    // バトーさん指定の150ms！
+            quick-tap-ms = <125>;       // 連打もスムーズに
             bindings = <&mo>, <&kp>;
         };
 
@@ -70,7 +70,6 @@
             key-positions = <1 15 29>;
         };
 
-        // ---【お試しコンボ：J+K同時押しでENTER】---
         combo_enter {
             key-positions = <19 20>; 
             bindings = <&kp ENTER>;
@@ -87,7 +86,7 @@
 &td0       &kp A  &kp S  &kp D     &kp F  &kp G                           &kp LEFT  &kp ENTER  &kp RIGHT     &kp H         &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B         &kp SPACE                   &kp DOWN                 &kp N         &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                          &kp LGUI  &mo 1  &lt_fast 3 SPACE                                                   &lt_fast 3 ENTER  &mo 2  &kp RALT
-            >; // ↑ 親指の lt 3 を lt_fast 3 に全置換しました
+            >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
@@ -98,7 +97,7 @@
 &trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3                    &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp SEMI
 &trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans          &trans          &rgb_ug RGB_EFF  &kp C_MUTE                     &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp NUHS
                                          &trans          &trans          &trans                                                                         &kp INS          &kp DEL          &trans
-            >; // ↑ 右端に ^ (EQUAL), れ (SEMI), : (NUHS) を追加完了！
+            >;
             sensor-bindings = <&scroll_encoder>;
         };
 
