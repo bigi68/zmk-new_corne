@@ -27,8 +27,8 @@ layers:
   - J
   - K
   - L
-  - JP SEMI
-  - JP COLON
+  - {t: ;, s: ':'}
+  - {t: '''', s: '"'}
   - $$mdi:apple-keyboard-control$$
   - Z
   - X
@@ -41,7 +41,7 @@ layers:
   - M
   - {t: ',', s: <}
   - {t: ., s: '>'}
-  - JP FSLH
+  - {t: /, s: '?'}
   - $$mdi:keyboard-esc$$
   - LGUI
   - NUMBER
@@ -77,7 +77,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
   - HOME
-  - JP SEMI
+  - {t: ;, s: ':'}
   - {t: '$$mdi:transfer$$', type: trans}
   - RGB OFF
   - RGB ON
@@ -100,47 +100,47 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   SYMBOL:
   - {t: '$$mdi:transfer$$', type: trans}
-  - JP EXCL
-  - JP DQT
-  - JP HASH
-  - JP DLLR
-  - JP PRCNT
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
-  - JP AMPS
-  - JP SQT
-  - JP LPAR
-  - JP RPAR
-  - JP EQUAL
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:bluetooth-off$$
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-scroll-wheel$$
   - $$mdi:mouse-right-click-outline$$
-  - '&mkp MB4'
+  - MB4
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - JP MINUS
-  - JP CARET
-  - JP AT
-  - JP LBKT
-  - JP YEN
-  - JP GRAVE
+  - {t: '-', s: _}
+  - {t: '=', s: +}
+  - {t: '[', s: '{'}
+  - {t: ']', s: '}'}
+  - {t: \, s: '|'}
+  - {t: '`', s: '~'}
   - {t: '$$mdi:transfer$$', type: trans}
   - OUT USB
   - OUT BLE
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&mkp MB5'
+  - MB5
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - JP COMMA
-  - JP DOT
-  - JP RBKT
-  - JP BSLH
-  - JP PIPE
-  - JP TILDE
+  - {t: ',', s: <}
+  - {t: ., s: '>'}
+  - {t: /, s: '?'}
+  - '?'
+  - '|'
+  - '~'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:keyboard-space$$
@@ -162,9 +162,9 @@ layers:
   - F10
   - F11
   - {t: '$$mdi:transfer$$', type: trans}
-  - JP MHEN
-  - JP HENK
-  - JP KANA
+  - INT1
+  - INT2
+  - INT3
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
@@ -181,7 +181,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:progress-download$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&mkp MB5'
+  - MB5
   - $$mdi:volume-off$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:transfer$$', type: trans}
