@@ -8,7 +8,7 @@
 
 / {
     behaviors {
-        // バトーさん仕様の高速レイヤー切り替え（150ms）
+        // バトーさん専用：高速レイヤー切り替え（150ms）
         lt_fast: lt_fast {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -25,7 +25,7 @@
         };
     };
 
-    // ZMK StudioでCombosメニューを表示させるための器だぜ
+    // ZMK Studioでコンボ設定を表示させるための器
     combos {
         compatible = "zmk,combos";
         timeout-ms = <50>;
@@ -42,7 +42,6 @@
 &kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B         &kp SPACE                             &kp DOWN                  &kp N         &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                          &kp LGUI  &mo 1  &lt_fast 3 SPACE                                                                  &lt_fast 3 ENTER  &mo 2  &kp RALT
             >;
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
         lower_layer {
@@ -53,7 +52,6 @@
 &trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans          &trans          &rgb_ug RGB_EFF  &kp C_MUTE                     &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp DEL
                                          &trans          &trans          &trans                                                                                          &kp INS          &kp DEL          &trans
             >;
-            sensor-bindings = <&scroll_encoder>;
         };
 
         raise_layer {
@@ -64,7 +62,6 @@
 &trans  &out OUT_USB  &out OUT_BLE  &none       &none       &kp MB5   &trans                     &mmv MOVE_DOWN                   &kp COMMA   &kp DOT     &kp FSLH    &kp QMARK   &kp PIPE     &kp TILDE
                                     &trans      &trans      &kp SPACE                                                             &kp RET     &trans      &trans
             >;
-            sensor-bindings = <&scroll_encoder>;
         };
 
         layer_3 {
@@ -75,7 +72,6 @@
 &trans          &sys_reset  &trans      &bootloader   &trans      &kp MB5   &kp C_MUTE                     &mmv MOVE_DOWN                   &trans        &trans      &bootloader   &sys_reset   &kp SCROLLLOCK   &kp PAUSE_BREAK
                                         &trans        &trans      &trans                                                                                          &trans        &trans      &trans
             >;
-            sensor-bindings = <&scroll_encoder>;
         };
     };
 };
