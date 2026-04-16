@@ -27,8 +27,8 @@ layers:
   - J
   - K
   - L
-  - {t: ;, s: ':'}
-  - {t: '''', s: '"'}
+  - JP SEMI
+  - JP COLON
   - $$mdi:apple-keyboard-control$$
   - Z
   - X
@@ -41,7 +41,7 @@ layers:
   - M
   - {t: ',', s: <}
   - {t: ., s: '>'}
-  - {t: /, s: '?'}
+  - JP FSLH
   - $$mdi:keyboard-esc$$
   - LGUI
   - NUMBER
@@ -62,7 +62,7 @@ layers:
   - {t: '8', s: '*'}
   - {t: '9', s: (}
   - {t: '0', s: )}
-  - {t: Sft+8, s: Sft+*}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:transfer$$', type: trans}
   - BT CLR ALL
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
@@ -77,7 +77,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
   - HOME
-  - {t: ;, s: ':'}
+  - JP SEMI
   - {t: '$$mdi:transfer$$', type: trans}
   - RGB OFF
   - RGB ON
@@ -91,7 +91,7 @@ layers:
   - RGB BRI
   - RGB BRD
   - END
-  - Sft+INT1
+  - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -100,17 +100,17 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   SYMBOL:
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: Sft+1, s: Sft+!}
-  - {t: Sft+2, s: Sft+@}
-  - {t: Sft+3, s: Sft+#}
-  - {t: Sft+4, s: Sft+$}
-  - {t: Sft+5, s: Sft+%}
+  - JP EXCL
+  - JP DQT
+  - JP HASH
+  - JP DLLR
+  - JP PRCNT
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
-  - {t: Sft+6, s: Sft+^}
-  - {t: Sft+7, s: Sft+&}
-  - {t: Sft+8, s: Sft+*}
-  - {t: Sft+9, s: Sft+(}
-  - {t: Sft+0, s: Sft+)}
+  - JP AMPS
+  - JP SQT
+  - JP LPAR
+  - JP RPAR
+  - JP EQUAL
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:bluetooth-off$$
@@ -121,12 +121,12 @@ layers:
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - {t: Sft+-, s: Sft+_}
-  - {t: Sft+', s: Sft+"}
-  - {t: '[', s: '{'}
-  - {t: ']', s: '}'}
-  - {t: \, s: '|'}
-  - {t: Sft+7, s: Sft+&}
+  - JP MINUS
+  - JP CARET
+  - JP AT
+  - JP LBKT
+  - JP YEN
+  - JP GRAVE
   - {t: '$$mdi:transfer$$', type: trans}
   - OUT USB
   - OUT BLE
@@ -135,12 +135,12 @@ layers:
   - '&mkp MB5'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - Sft+RO
-  - Sft++
-  - '{'
-  - '}'
-  - '|'
-  - {t: Sft+=, s: Sft++}
+  - JP COMMA
+  - JP DOT
+  - JP RBKT
+  - JP BSLH
+  - JP PIPE
+  - JP TILDE
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:keyboard-space$$
@@ -162,16 +162,16 @@ layers:
   - F10
   - F11
   - {t: '$$mdi:transfer$$', type: trans}
-  - INT1
-  - INT2
-  - INT3
-  - INT4
-  - INT5
+  - JP MHEN
+  - JP HENK
+  - JP KANA
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - $$mdi:progress-download$$
-  - INT6
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:mouse-scroll-wheel$$
   - $$mdi:mouse-right-click-outline$$
   - PRINTSCREEN
@@ -196,8 +196,3 @@ layers:
   - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-combos:
-- p: [1, 15, 29]
-  k: '&soft_off'
-- p: [19, 20]
-  k: {t: '$$mdi:keyboard-return$$', type: enter}
