@@ -703,7 +703,7 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">JP</tspan><tspan x="0" dy="1.2em">ZNKJ</tspan>
+<tspan x="0" dy="-1.2em">(K</tspan><tspan x="0" dy="1.2em">VAL(</tspan><tspan x="0" dy="1.2em">0x35))</tspan>
 </text>
 </g>
 <g transform="translate(28, 161)" class="key trans keypos-28">
@@ -942,35 +942,35 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">JP</tspan><tspan x="0" dy="1.2em">MINUS</tspan>
+<tspan x="0" dy="-1.2em">(K</tspan><tspan x="0" dy="1.2em">VAL(</tspan><tspan x="0" dy="1.2em">0x2D))</tspan>
 </text>
 </g>
 <g transform="translate(728, 91)" class="key keypos-23">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">JP</tspan><tspan x="0" dy="1.2em">EQUAL</tspan>
+<tspan x="0" dy="-1.2em">(K</tspan><tspan x="0" dy="1.2em">VAL(</tspan><tspan x="0" dy="1.2em">0x2E))</tspan>
 </text>
 </g>
 <g transform="translate(784, 84)" class="key keypos-24">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">JP</tspan><tspan x="0" dy="1.2em">LBKT</tspan>
+<tspan x="0" dy="-1.2em">(K</tspan><tspan x="0" dy="1.2em">VAL(</tspan><tspan x="0" dy="1.2em">0x2F))</tspan>
 </text>
 </g>
 <g transform="translate(840, 91)" class="key keypos-25">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">JP</tspan><tspan x="0" dy="1.2em">RBKT</tspan>
+<tspan x="0" dy="-1.2em">(K</tspan><tspan x="0" dy="1.2em">VAL(</tspan><tspan x="0" dy="1.2em">0x30))</tspan>
 </text>
 </g>
 <g transform="translate(896, 105)" class="key keypos-26">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">JP</tspan><tspan x="0" dy="1.2em">BSLH</tspan>
+<tspan x="0" dy="-1.2em">(K</tspan><tspan x="0" dy="1.2em">VAL(</tspan><tspan x="0" dy="1.2em">0x87))</tspan>
 </text>
 </g>
 <g transform="translate(952, 105)" class="key keypos-27">
@@ -1166,14 +1166,14 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">JP</tspan><tspan x="0" dy="1.2em">HNK</tspan>
+<tspan x="0" dy="-1.2em">(K</tspan><tspan x="0" dy="1.2em">VAL(</tspan><tspan x="0" dy="1.2em">0x8B))</tspan>
 </text>
 </g>
 <g transform="translate(140, 91)" class="key keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">JP</tspan><tspan x="0" dy="1.2em">MHNK</tspan>
+<tspan x="0" dy="-1.2em">(K</tspan><tspan x="0" dy="1.2em">VAL(</tspan><tspan x="0" dy="1.2em">0x8A))</tspan>
 </text>
 </g>
 <g transform="translate(196, 84)" class="key none keypos-16">
