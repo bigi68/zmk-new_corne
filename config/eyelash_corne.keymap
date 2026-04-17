@@ -6,19 +6,18 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/pointing.h>
 
-/* 定義は「安全・確実・標準的」なものに統一したぜ！ */
-#define JP_HNK  INT4    // 変換
-#define JP_MHNK INT5    // 無変換
-#define JP_ZNKJ GRAVE   // 全角/半角
-#define JP_MINS MINUS   // ー
-#define JP_EQL  EQUAL   // ^
-#define JP_LBKT LBKT    // @
-#define JP_RBKT RBKT    // [
-#define JP_BSLH BSLH    // ろ
+/* 定義は標準定数で統一 */
+#define JP_HNK  INT4    
+#define JP_MHNK INT5    
+#define JP_ZNKJ GRAVE   
+#define JP_MINS MINUS   
+#define JP_EQL  EQUAL   
+#define JP_LBKT LBKT    
+#define JP_RBKT RBKT    
+#define JP_BSLH BSLH    
 
 / {
     behaviors {
-        // 高速レイヤー切り替え（バトーさん仕様）
         lt_fast: lt_fast {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -43,7 +42,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // 1番目のレイヤー (Index 0)
         default_layer {
             display-name = "QWERTY";
             bindings = <
@@ -54,7 +52,6 @@
             >;
         };
 
-        // 2番目のレイヤー (Index 1)
         lower_layer {
             display-name = "NUMBER";
             bindings = <
@@ -65,7 +62,6 @@
             >;
         };
 
-        // 3番目のレイヤー (Index 2)
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
@@ -76,7 +72,6 @@
             >;
         };
 
-        // 4番目のレイヤー (Index 3)
         layer_3 {
             display-name = "Fn";
             bindings = <
@@ -87,14 +82,13 @@
             >;
         };
 
-        // 5番目のレイヤー (Index 4) - ここが中さんの言う5番目だぜ！
         layer_4 {
             display-name = "DUMMY";
             bindings = <
-&none  &kp JP_HNK   &kp JP_MHNK  &kp JP_ZNKJ  &kp JP_MINS  &kp JP_EQL                                     &none  &kp JP_LBKT  &kp JP_RBKT  &kp JP_BSLH  &none  &none
-&none  &none        &none        &none        &none        &none                           &none  &none  &none  &none        &none        &none        &none  &none
-&none  &none        &none        &none        &none        &none        &none              &none  &none  &none  &none        &none        &none        &none  &none
-                                 &none        &none        &none                                      &none  &none        &none
+&none  &kp JP_HNK   &kp JP_MHNK  &kp JP_ZNKJ  &kp JP_MINS  &kp JP_EQL                                     &mmv MOVE_UP                     &none  &kp JP_LBKT  &kp JP_RBKT  &kp JP_BSLH  &none  &none
+&none  &none        &none        &none        &none        &none                           &mmv MOVE_LEFT &mkp LCLK  &mmv MOVE_RIGHT       &none  &none        &none        &none        &none  &none
+&none  &none        &none        &none        &none        &none        &none              &mmv MOVE_DOWN                   &none  &none  &none  &none        &none        &none
+                                 &none        &none        &none                                                            &none  &none  &none
             >;
         };
     };
