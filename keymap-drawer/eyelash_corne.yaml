@@ -77,7 +77,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
   - HOME
-  - (K VAL(0x35))
+  - (0x35)
   - {t: '$$mdi:transfer$$', type: trans}
   - RGB OFF
   - RGB ON
@@ -121,11 +121,11 @@ layers:
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - (K VAL(0x2D))
-  - (K VAL(0x2E))
-  - (K VAL(0x2F))
-  - (K VAL(0x30))
-  - (K VAL(0x87))
+  - (0x2D)
+  - (0x2E)
+  - (0x2F)
+  - (0x30)
+  - (0x87)
   - {t: '`', s: '~'}
   - {t: '$$mdi:transfer$$', type: trans}
   - OUT USB
@@ -162,8 +162,8 @@ layers:
   - F10
   - F11
   - {t: '$$mdi:transfer$$', type: trans}
-  - (K VAL(0x8B))
-  - (K VAL(0x8A))
+  - (0x8B)
+  - (0x8A)
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
